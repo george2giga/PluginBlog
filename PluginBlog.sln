@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginBlog.Web", "PluginBlog.Web\PluginBlog.Web.csproj", "{941C8413-5876-493B-AB83-0977DA63F581}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginBlog.Core", "PluginBlog.Core\PluginBlog.Core.csproj", "{789889E4-0092-45E1-A416-03E54E045C7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginBlog.Core.Tests", "PluginBlog.Core.Tests\PluginBlog.Core.Tests.csproj", "{ACF17AA6-4FAC-40C6-BB1F-74C0FB28B802}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{941C8413-5876-493B-AB83-0977DA63F581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{941C8413-5876-493B-AB83-0977DA63F581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{941C8413-5876-493B-AB83-0977DA63F581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{941C8413-5876-493B-AB83-0977DA63F581}.Release|Any CPU.Build.0 = Release|Any CPU
+		{789889E4-0092-45E1-A416-03E54E045C7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789889E4-0092-45E1-A416-03E54E045C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789889E4-0092-45E1-A416-03E54E045C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789889E4-0092-45E1-A416-03E54E045C7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACF17AA6-4FAC-40C6-BB1F-74C0FB28B802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACF17AA6-4FAC-40C6-BB1F-74C0FB28B802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACF17AA6-4FAC-40C6-BB1F-74C0FB28B802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACF17AA6-4FAC-40C6-BB1F-74C0FB28B802}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

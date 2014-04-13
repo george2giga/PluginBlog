@@ -1,0 +1,27 @@
+﻿@using PluginBlog.Web.Helpers
+@model PluginBlog.Core.Entities.Post
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@Model.Title</h1>
+<p>
+    @Html.Raw(Model.Description)
+</p>
+
+    <span class="badge alert-info">Posted on @Model.PostedOn</span><a class="badge alert-info label-info" href="@Url.CategoryLink(Model.Category)">@Model.Category.Name</a>
+    <div class="pull-right">
+
+        @foreach (var tag in Model.Tags)
+        {
+            <a class="label label-success" href="@Url.TagLink(tag)"><span>@tag.Name</span></a>
+        }
+
+    </div>
+
+
+
+
+
+

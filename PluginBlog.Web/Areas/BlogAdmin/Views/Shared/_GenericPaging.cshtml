@@ -1,0 +1,17 @@
+﻿@using PluginBlog.Web.Helpers
+@model dynamic
+
+@{int pageIndex = Model.PageIndex;}
+
+
+<ul class="pager" style="margin: 0;text-align: left">
+    @if (Model.HasPreviousPage)
+    {
+        <li><a href="@Url.PaginateLink(pageIndex - 1)&pagesize=@Model.PageSize">Previous</a></li>
+    }
+    @if (Model.HasNextPage)
+    {
+        <li><a href="@Url.PaginateLink(pageIndex + 1)&pagesize=@Model.PageSize">Next</a></li>
+    }
+    <span class="label label-info pull-right">Page: @Model.PageIndex of @Model.TotalPages</span>
+</ul>

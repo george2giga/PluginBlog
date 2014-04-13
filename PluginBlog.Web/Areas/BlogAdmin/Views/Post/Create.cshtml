@@ -1,0 +1,91 @@
+﻿@using System.Globalization
+@model PluginBlog.Web.Areas.BlogAdmin.Models.EditPost
+
+@{
+    ViewBag.Title = "Create Post";
+    Layout = "~/Areas/BlogAdmin/Views/Shared/_BlogAdminLayout.cshtml";
+}
+
+<h2>Create <small class="pull-right"><span class="label label-success">Post</span></small></h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+     <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.HiddenFor(x=>x.Post.Id)
+            @Html.LabelFor(model => model.Post.Title, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Post.Title, new { @class = "form-control input-md-width slugMe" })
+                @Html.ValidationMessageFor(model => model.Post.Title)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Post.UrlSlug, new { @class = "control-label col-md-2" })
+            <div class="col-lg-10">
+                @Html.TextBoxFor(model => model.Post.UrlSlug, new { @class = "form-control input-md-width slugHere" })
+                @Html.ValidationMessageFor(model => model.Post.UrlSlug)
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.Post.ShortDescription, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Post.ShortDescription, new { @class = "form-control input-md-width editme", style = "height: 150px" })
+                @Html.ValidationMessageFor(model => model.Post.ShortDescription)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Post.Description, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Post.Description, new { @class = "form-control input-md-width editme", style="height: 600px" })
+                @Html.ValidationMessageFor(model => model.Post.Description)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SelectedCategory, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.SelectedCategory, new SelectList(Model.Categories, "Id", "Name"),"Please select a category", new {@class="form-control"})
+                @Html.ValidationMessageFor(model => model.SelectedCategory)
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.Post.Meta, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Post.Meta, new { @class = "form-control input-md-width" })
+                @Html.ValidationMessageFor(model => model.Post.Meta)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.SelectedTags, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ListBoxFor(model => model.SelectedTags, Model.Tags.Select(x => new SelectListItem() { Text = x.Name, Value = x.Id.ToString(CultureInfo.InvariantCulture) }), new { Multiple = "multiple", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SelectedTags)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Post.Published, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(model => model.Post.Published, new { @class = "form-control", style="width: 25px;height: 25px" })
+                @Html.ValidationMessageFor(model => model.Post.Published)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
