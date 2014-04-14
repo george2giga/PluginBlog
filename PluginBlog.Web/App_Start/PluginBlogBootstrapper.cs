@@ -21,17 +21,8 @@ namespace PluginBlog.Web
             //Register the authorization method used to enable/disable editing on the html element
             PluginBlogConfig.RegisterAuthorization = () =>
                                                      {
-                                                         var editable =
-                                                             !string.IsNullOrEmpty(
-                                                                 HttpContext.Current.Request.QueryString["editablemvc"]);
-                                                         if (editable)
-                                                         {
-                                                             return
-                                                                 Convert.ToBoolean(
-                                                                     HttpContext.Current.Request.QueryString[
-                                                                         "editablemvc"]);
-                                                         }
-                                                         return true;
+                                                         var authProvider = new SampleAuthProvider();
+                                                         return authProvider;
                                                      };
 
         }

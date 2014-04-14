@@ -22,7 +22,7 @@
             @Html.HiddenFor(x=>x.Post.Id)
             @Html.LabelFor(model => model.Post.Title, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.Post.Title, new { @class = "form-control input-md-width", @maxlength = 500 })
+                @Html.TextBoxFor(model => model.Post.Title, new { @class = "form-control input-md-width slugMe", @maxlength = 500 })
                 @Html.ValidationMessageFor(model => model.Post.Title)
             </div>
         </div>
@@ -30,7 +30,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Post.UrlSlug, new { @class = "control-label col-md-2" })
             <div class="col-lg-10">
-                @Html.TextBoxFor(model => model.Post.UrlSlug, new { @class = "form-control input-md-width" })
+                @Html.TextBoxFor(model => model.Post.UrlSlug, new { @class = "form-control input-md-width slugHere" })
                 @Html.ValidationMessageFor(model => model.Post.UrlSlug)
             </div>
         </div>

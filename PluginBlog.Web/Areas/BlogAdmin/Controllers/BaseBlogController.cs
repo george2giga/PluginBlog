@@ -15,11 +15,12 @@ namespace PluginBlog.Web.Areas.BlogAdmin.Controllers
 
          protected override void OnActionExecuting(ActionExecutingContext filterContext)
          {
-             var authorized = PluginBlogConfig.IsAuthorized();
+             var authProvider = PluginBlogConfig.GetAuthorization();
              //if not authorized redirect to home
-             if (authorized == false)
+             if (authProvider.IsLoggedIn == false)
              {
-                 filterContext.Result = new RedirectResult(Url.Content("~/"));
+                 //filterContext.Result = new RedirectResult(Url.Content("~/"));
+                 filterContext.Result = new RedirectResult(Url.Action("Login","Auth"));
              }
          }
 

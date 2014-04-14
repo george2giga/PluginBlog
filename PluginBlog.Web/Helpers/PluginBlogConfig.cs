@@ -30,12 +30,9 @@ namespace PluginBlog.Web.Helpers
         /// Execute the AuthorizeAccess function.
         /// </summary>
         /// <returns>true if user is authorized</returns>
-        public static bool IsAuthorized()
+        public static IAuthProvider GetAuthorization()
         {
-            if (RegisterAuthorization == null)
-                return false;
-            
-            return RegisterAuthorization();
+            return RegisterAuthorization == null ? new SampleAuthProvider() : RegisterAuthorization();
         }
 
         /// <summary>
@@ -46,7 +43,7 @@ namespace PluginBlog.Web.Helpers
         /// <summary>
         /// Consumer defined function to authorize editing access.
         /// </summary>
-        public static Func<bool> RegisterAuthorization { get; set; }
+        public static Func<IAuthProvider> RegisterAuthorization { get; set; }
     
     }
 }

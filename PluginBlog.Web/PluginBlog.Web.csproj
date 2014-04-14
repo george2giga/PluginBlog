@@ -126,19 +126,23 @@
     <Compile Include="App_Start\PluginBlogBootstrapper.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\BlogAdmin\BlogAdminAreaRegistration.cs" />
+    <Compile Include="Areas\BlogAdmin\Controllers\AuthController.cs" />
     <Compile Include="Areas\BlogAdmin\Controllers\BaseBlogController.cs" />
     <Compile Include="Areas\BlogAdmin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\BlogAdmin\Controllers\PostController.cs" />
     <Compile Include="Areas\BlogAdmin\Controllers\TagController.cs" />
     <Compile Include="Areas\BlogAdmin\Models\DbMessage.cs" />
     <Compile Include="Areas\BlogAdmin\Models\EditPost.cs" />
+    <Compile Include="Areas\BlogAdmin\Models\LoginModel.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AuthProvider.cs" />
     <Compile Include="Helpers\BlogFeed.cs" />
     <Compile Include="Helpers\FeedResult.cs" />
+    <Compile Include="Helpers\IAuthProvider.cs" />
     <Compile Include="Helpers\PaginatedList.cs" />
     <Compile Include="Helpers\PluginBlogConfig.cs" />
     <Compile Include="Helpers\PostModelBinder.cs" />
@@ -176,6 +180,7 @@
     <Content Include="Areas\BlogAdmin\Views\Post\Delete.cshtml" />
     <Content Include="Areas\BlogAdmin\Views\Post\Edit.cshtml" />
     <Content Include="Areas\BlogAdmin\Views\Shared\_DbMessage.cshtml" />
+    <Content Include="Areas\BlogAdmin\Views\Auth\Login.cshtml" />
     <None Include="Properties\PublishProfiles\publishblog.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
