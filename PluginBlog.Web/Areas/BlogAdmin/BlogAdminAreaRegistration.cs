@@ -17,7 +17,8 @@ namespace PluginBlog.Web.Areas.BlogAdmin
             context.MapRoute(
                 "BlogAdmin_default",
                 "BlogAdmin/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional },
+                new[] { "PluginBlog.Web.Areas.BlogAdmin.Controllers" }
             );
         }
     }

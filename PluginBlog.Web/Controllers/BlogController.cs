@@ -71,12 +71,9 @@ namespace PluginBlog.Web.Controllers
         /// <returns></returns>
         public ActionResult Feed()
         {
-            //var blogTitle = ConfigurationManager.AppSettings["BlogTitle"];
-            //var blogDescription = ConfigurationManager.AppSettings["BlogDescription"];
-            //var blogUrl = ConfigurationManager.AppSettings["BlogUrl"];
-            var blogTitle = "ciao";
-            var blogDescription = "Desc";
-            var blogUrl = "http://www.google.com";
+            var blogTitle = "A blog about stuff";
+            var blogDescription = "A blog about random stuff, add some description here.";
+            var blogUrl = "http://www.aboutstuffblog.com";
 
 
             var posts = _repository.Posts().Take(20).ToList().Select
@@ -92,7 +89,7 @@ namespace PluginBlog.Web.Controllers
             var feed = new SyndicationFeed(blogTitle, blogDescription, new Uri(blogUrl), posts)
             {
                 Copyright = new TextSyndicationContent(String.Format("Copyright © {0}", blogTitle)),
-                Language = "en-US"
+                Language = "en-GB"
             };
 
             return new FeedResult(new Rss20FeedFormatter(feed));
