@@ -11,7 +11,11 @@
     if (Request.QueryString.AllKeys.Contains("searchText", StringComparer.CurrentCultureIgnoreCase))
     {
         search = Request.QueryString["searchText"];
-        pagingUrl = Url.Action("Search", "Post", new {searchText = search, page = 0});
+        pagingUrl = Url.Action("Search", "Post", new { searchText = search, page = 0});
+    }
+    else
+    {
+        pagingUrl = Url.Action("Index", "Post", new { page = 0 });
     }
     var controller = ViewContext.RouteData.GetRequiredString("controller");
     var action = ViewContext.RouteData.GetRequiredString("action");
@@ -41,6 +45,6 @@
         </div>
     </div>
 </div>
-@*@Html.Hidden("pagingUrl", string.Format("{0}?page=0&pageSize=", Url.Action(action, controller)))*@
-@Html.Hidden("pagingUrl", pagingUrl + "&pageSize=")
+@*@Html.Hidden("pagingUrl", string.Format("{0}?page=0", Url.Action(action, controller)))*@
+@Html.Hidden("pagingUrl", pagingUrl)
 

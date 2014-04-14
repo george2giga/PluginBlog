@@ -15,7 +15,7 @@ function initPager() {
     $('#recordPerPage').change(function () {
         var pageSize = $(this).val();
         var targetUrl = $('#pagingUrl').val();
-        window.location = targetUrl + pageSize;
+        window.location = targetUrl + "&pageSize=" + pageSize;
     });
 }
 
