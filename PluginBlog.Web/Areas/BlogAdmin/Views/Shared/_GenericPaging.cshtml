@@ -13,5 +13,5 @@
     {
         <li><a href="@Url.PaginateLink(pageIndex + 1)&pagesize=@Model.PageSize">Next</a></li>
     }
-    <span class="label label-info pull-right">Page: @Model.PageIndex of @Model.TotalPages</span>
+    <span class="label label-info pull-right">Page: @(Model.PageIndex + 1) of @Model.TotalPages</span>
 </ul>
