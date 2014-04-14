@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginBlog.Core", "PluginBl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginBlog.Core.Tests", "PluginBlog.Core.Tests\PluginBlog.Core.Tests.csproj", "{ACF17AA6-4FAC-40C6-BB1F-74C0FB28B802}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginBlog.Package", "PluginBlog.Package\PluginBlog.Package.csproj", "{1DEB7613-6880-4A61-9FC3-FB3158E6DAE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{ACF17AA6-4FAC-40C6-BB1F-74C0FB28B802}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACF17AA6-4FAC-40C6-BB1F-74C0FB28B802}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACF17AA6-4FAC-40C6-BB1F-74C0FB28B802}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DEB7613-6880-4A61-9FC3-FB3158E6DAE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DEB7613-6880-4A61-9FC3-FB3158E6DAE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DEB7613-6880-4A61-9FC3-FB3158E6DAE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DEB7613-6880-4A61-9FC3-FB3158E6DAE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
