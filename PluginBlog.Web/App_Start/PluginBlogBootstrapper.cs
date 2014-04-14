@@ -34,7 +34,6 @@ namespace PluginBlog.Web
                                                          return true;
                                                      };
 
-
         }
 
         //After App_Start is executed register the bundles
