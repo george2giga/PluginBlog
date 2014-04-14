@@ -33,11 +33,18 @@ namespace PluginBlog.Web.Helpers
             return helper.Action(action, controller);
         }
 
-        public static string PaginateLink(this UrlHelper helper, int page)
+        public static string PaginateLink(this UrlHelper helper, int? page, int pageSize=10)
         {
             var query = helper.RequestContext.HttpContext.Request.QueryString;
             var values = query.AllKeys.ToDictionary(key => key, key => (object)query[key]);
-            values["page"] = page;
+            if (query.AllKeys.Contains("page"))
+            {
+                values["page"] = page;
+            }
+            if(query.AllKeys.Contains("pagesize"))
+            { 
+                values["pagesize"] = pageSize;
+            }
             var routeValues = new RouteValueDictionary(values);
             var controller = helper.RequestContext.RouteData.GetRequiredString("controller");
             var action = helper.RequestContext.RouteData.GetRequiredString("action");

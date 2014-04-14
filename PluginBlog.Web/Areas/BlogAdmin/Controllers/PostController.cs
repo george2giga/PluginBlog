@@ -175,10 +175,10 @@ namespace PluginBlog.Web.Areas.BlogAdmin.Controllers
         }
 
         [HttpGet]
-        public ActionResult Search(int? page, string searchText)
+        public ActionResult Search(int? page, string searchText, int? pagesize)
         {
             var result = _blogRepository.AllPostsForSearch(searchText).AsNoTracking().OrderByDescending(x => x.PostedOn);
-            var model = new PaginatedList<Post>(result, page ?? 0, PAGE_SIZE);
+            var model = new PaginatedList<Post>(result, page ?? 0,pagesize?? PAGE_SIZE);
             return View("Index", model);
         }
 
