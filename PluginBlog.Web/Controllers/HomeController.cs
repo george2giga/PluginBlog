@@ -3,14 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PluginBlog.Core;
+using PluginBlog.Core.Repositories;
 
 namespace PluginBlog.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IBlogRepository _repository;
+
+        public HomeController()
+        {
+            _repository = new BlogRepository(new BlogContext());
+        }
+
+        public HomeController(IBlogRepository repository)
+        {
+            _repository = repository;
+        }
+
         public ActionResult Index()
         {
-            return View();
+            var result = _repository.Posts().Take(3).OrderByDescending(x => x.PostedOn).ToList();
+            return View(result);
         }
 
         public ActionResult About()
