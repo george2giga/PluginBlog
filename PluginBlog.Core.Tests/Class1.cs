@@ -16,14 +16,14 @@ namespace PluginBlog.Core.Tests
     public class Class1
     {
 
-        [Test]
-        public void CreateDbTables()
-        {
-            // Set the initializer here
-            Database.SetInitializer(new BlogContextInitializer());
-            var context = new BlogContext();
-            context.Database.Initialize(false);
-        }
+        //[Test]
+        //public void CreateDbTables()
+        //{
+        //    // Set the initializer here
+        //    Database.SetInitializer(new BlogContextInitializer());
+        //    var context = new BlogContext();
+        //    context.Database.Initialize(false);
+        //}
 
         [Test]
         public void GetAllPosts()
