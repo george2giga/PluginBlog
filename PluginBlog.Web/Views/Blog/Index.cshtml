@@ -9,7 +9,7 @@
 @foreach (var post in Model)
 {
 <h1><a href="@Url.PostLink(post)">@post.Title</a></h1>
-<p>@post.ShortDescription</p>
+<p>@Html.Raw(@post.ShortDescription)</p>
 <div>
     <span class="badge alert-info">Posted on @post.PostedOn</span> <a class="badge alert-info label-info" href="@Url.CategoryLink(post.Category)">@post.Category.Name</a>
     <div class="pull-right">

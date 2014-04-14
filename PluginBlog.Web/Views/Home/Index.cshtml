@@ -18,7 +18,7 @@
         <div class="col-md-4">
             <h2>@post.Title</h2>
             <p>
-                @post.ShortDescription
+                @Html.Raw(post.ShortDescription)
             </p>
             <p><a class="btn btn-default" href="@Url.PostLink(post)">Learn more &raquo;</a></p>
         </div>

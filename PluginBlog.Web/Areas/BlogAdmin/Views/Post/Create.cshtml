@@ -35,7 +35,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Post.ShortDescription, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.Post.ShortDescription, new { @class = "form-control input-md-width", style = "height: 150px" })
+                @Html.TextAreaFor(model => model.Post.ShortDescription, new { @class = "form-control input-md-width editme", style = "height: 150px" })
                 @Html.ValidationMessageFor(model => model.Post.ShortDescription)
             </div>
         </div>
