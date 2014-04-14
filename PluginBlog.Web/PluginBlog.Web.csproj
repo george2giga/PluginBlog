@@ -176,6 +176,7 @@
     <Content Include="Areas\BlogAdmin\Views\Post\Delete.cshtml" />
     <Content Include="Areas\BlogAdmin\Views\Post\Edit.cshtml" />
     <Content Include="Areas\BlogAdmin\Views\Shared\_DbMessage.cshtml" />
+    <None Include="Properties\PublishProfiles\publishblog.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

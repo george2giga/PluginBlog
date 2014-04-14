@@ -22,6 +22,8 @@ function initPager() {
 
 function initWysiwyg()
 {
+    //Fix bundleconfig
+    tinyMCE.baseURL = '/scripts/tinymce',
     tinymce.init({
         selector: "textarea.editme",
         plugins: [
