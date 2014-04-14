@@ -24,7 +24,7 @@ namespace PluginBlog.Web.Controllers
 
         public ActionResult Index()
         {
-            var result = _repository.Posts().Take(3).OrderByDescending(x => x.PostedOn).ToList();
+            var result = _repository.Posts().OrderByDescending(x => x.PostedOn).Take(3).ToList();
             return View(result);
         }
 
