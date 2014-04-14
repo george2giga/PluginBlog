@@ -1,0 +1,47 @@
+﻿@using PluginBlog.Web.Helpers
+@model PluginBlog.Web.Helpers.PaginatedList<PluginBlog.Core.Entities.Post>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+}
+
+
+@foreach (var post in Model)
+{
+<h1><a href="@Url.PostLink(post)">@post.Title</a></h1>
+<p>@Html.Raw(@post.ShortDescription)</p>
+<div>
+    <span class="badge alert-info">Posted on @post.PostedOn</span> <a class="badge alert-info label-info" href="@Url.CategoryLink(post.Category)">@post.Category.Name</a>
+    <div class="pull-right">
+        @foreach (var tag in post.Tags)
+        {
+            <a class="label label-success" href="@Url.TagLink(tag)"><span>@tag.Name</span></a>
+        }
+    </div>
+</div>
+<hr/>
+}
+
+<!-- Paging -->
+<div class="row">
+    <div class="col-md-4">
+        <ul class="pager" style="margin: 0;text-align: left">
+            @if (Model.HasPreviousPage)
+            {
+                <li><a href="@Url.PaginateLink(Model.PageIndex -1)">Previous</a></li>
+            }
+
+            @if (Model.HasNextPage)
+            {
+                <li><a href="@Url.PaginateLink(Model.PageIndex +1)">Next</a></li>
+            }
+        </ul>
+    </div>
+    <div class="col-md-8">
+        <span class="label label-info pull-right">Page: @(Model.PageIndex + 1) of @Model.TotalPages</span>
+    </div>
+</div>
+
+ 
+
+

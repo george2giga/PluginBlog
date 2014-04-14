@@ -1,0 +1,50 @@
+﻿@using PluginBlog.Web.Helpers
+@{
+    var pageSizeChoices = new int[] {2, 10, 25, 50, 100, 200 };
+    var pageSize = 10;
+    string search = null;
+    var pagingUrl = Url.CurrentUrl();
+    if (Request.QueryString.AllKeys.Contains("pageSize", StringComparer.CurrentCultureIgnoreCase))
+    {
+        pageSize = Convert.ToInt32(Request.QueryString["pageSize"]);
+    }
+    if (Request.QueryString.AllKeys.Contains("searchText", StringComparer.CurrentCultureIgnoreCase))
+    {
+        search = Request.QueryString["searchText"];
+        pagingUrl = Url.Action("Search", "Post", new { searchText = search, page = 0});
+    }
+    else
+    {
+        pagingUrl = Url.Action("Index", "Post", new { page = 0 });
+    }
+    var controller = ViewContext.RouteData.GetRequiredString("controller");
+    var action = ViewContext.RouteData.GetRequiredString("action");
+
+    
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div >
+            <label>
+                <select size="1" id="recordPerPage">
+                    @foreach (var choice in pageSizeChoices)
+                    {
+                        if (choice == pageSize)
+                        {
+                            <option value="@choice" selected="selected">@choice</option>    
+                        }
+                        else
+                        {
+                            <option value="@choice">@choice</option>
+                        }
+                        
+                    }
+                </select> records per page
+            </label>
+        </div>
+    </div>
+</div>
+@*@Html.Hidden("pagingUrl", string.Format("{0}?page=0", Url.Action(action, controller)))*@
+@Html.Hidden("pagingUrl", pagingUrl)
+

@@ -1,0 +1,20 @@
+﻿@using PluginBlog.Web.Areas.BlogAdmin.Models
+@{
+    DbMessage dbMessage = null;
+    if (TempData["dbMessage"] != null)
+    {
+        dbMessage = TempData["dbMessage"] as DbMessage;    
+    }
+    
+}
+
+@if (dbMessage != null)
+{
+    <text>
+        <div class="alert alert-@(dbMessage.Success ? "success": "danger") alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>@dbMessage.Message</strong>
+        </div>
+    </text>    
+}
+

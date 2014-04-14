@@ -1,0 +1,90 @@
+﻿@model  PluginBlog.Web.Helpers.PaginatedList<PluginBlog.Core.Entities.Post>
+@{
+    Layout = "~/Areas/BlogAdmin/Views/Shared/_BlogAdminLayout.cshtml";
+    ViewBag.Title = "Post list";
+}
+
+<h2>Posts</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="btn-group">
+            <a class="btn btn-primary" href="@Url.Action("Create")">Create Post</a>
+            @*<a class="btn btn-primary" href="#">ManageRoles</a>*@
+        </div>
+    </div>
+</div>
+<br/>
+<p>
+    @Html.Partial("_RecordsPerPage")
+</p>
+@Html.Partial("_DbMessage")
+        
+@{var dummy = Model.FirstOrDefault(); }
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => dummy.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => dummy.Meta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => dummy.UrlSlug)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => dummy.Published)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => dummy.PostedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => dummy.LastModified)
+        </th>
+        <th>
+            Actions
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Meta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrlSlug)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Published)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastModified)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", "Post", new { id = item.Id})" class="btn btn-warning btn-xs" title="Edit">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+                <a href="@Url.Action("Details", "Post", new { id = item.Id})" class="btn btn-success btn-xs" title="Details">
+                    <span class="glyphicon glyphicon-ok"></span>
+                </a>
+                <a href="@Url.Action("Delete", "Post", new { id = item.Id})" class="btn btn-danger btn-xs" title="Delete">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </a>
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.Partial("_GenericPaging", Model)
+
+
