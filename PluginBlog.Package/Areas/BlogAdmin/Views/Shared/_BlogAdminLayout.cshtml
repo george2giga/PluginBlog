@@ -50,10 +50,10 @@
                     </div>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="@Url.Content("~/")">Home</a></li>
+                    <li><a href="@Url.Content("~/")"><i class="glyphicon glyphicon-home" style="line-height: 0"></i> Home</a></li>
                     @if (PluginBlogConfig.GetAuthorization().IsLoggedIn)
                     {
-                        <li><a href="@Url.Action("Logout", "Auth")">Logout</a></li>
+                        <li><a href="@Url.Action("Logout", "Auth")"><i class="glyphicon glyphicon-share-alt" style="line-height: 0"></i> Logout</a></li>
                     }
                 </ul>
             </div>
@@ -63,7 +63,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - PluginBlog</p>
         </footer>
     </div>
 

@@ -105,7 +105,6 @@
     <Content Include="Areas\BlogAdmin\Views\Post\Details.cshtml" />
     <Content Include="Areas\BlogAdmin\Views\Post\Edit.cshtml" />
     <Content Include="Areas\BlogAdmin\Views\Post\Index.cshtml" />
-    <Content Include="Areas\BlogAdmin\Views\Shared\_BlogAdminLayout.cshtml" />
     <Content Include="Areas\BlogAdmin\Views\Shared\_DbMessage.cshtml" />
     <Content Include="Areas\BlogAdmin\Views\Shared\_GenericPaging.cshtml" />
     <Content Include="Areas\BlogAdmin\Views\Shared\_RecordsPerPage.cshtml" />
@@ -116,6 +115,7 @@
     <Content Include="Areas\BlogAdmin\Views\Tag\Index.cshtml" />
     <Content Include="Areas\BlogAdmin\Views\web.config" />
     <None Include="App.config" />
+    <Content Include="Areas\BlogAdmin\Views\Shared\_BlogAdminLayout.cshtml" />
     <None Include="Controllers\BlogController.cs.pp" />
     <Content Include="Areas\BlogAdmin\BlogAdminAreaRegistration.cs" />
     <Compile Include="Areas\BlogAdmin\Controllers\AuthController.cs" />
@@ -147,6 +147,9 @@
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.json" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.ttf" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="Views\Blog\Details.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Shared\_BlogLayout.cshtml" />
     <None Include="Web.config.transform" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -331,15 +334,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\pluginblog.css" />
     <Content Include="Views\_ViewStart.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Blog\Details.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Blog\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\_BlogLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
