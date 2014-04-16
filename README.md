@@ -57,7 +57,9 @@ The two functions register respectively the repository and the authorization for
 To replace the default authentication, create a new implementation of *IAuthProvider* and replace *SampleAuthProvider*.
 
 #### <i class="icon-cog"></i> PostStart
-After the start, client dependencies are registered. By default the [TinyMce][1] wysiwyg is used along with [Bootstrap][2] for the layout. 
+After the start, client dependencies are registered. By default the [TinyMce][2] wysiwyg is used along with [Bootstrap][3] for the layout. 
 
 
   [1]: http://docs.nuget.org/docs/start-here/installing-nuget
+  [2]: http://docs.nuget.org/docs/start-here/installing-nuget
+  [3]: http://getbootstrap.com/
