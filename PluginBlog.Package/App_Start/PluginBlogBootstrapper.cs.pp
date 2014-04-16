@@ -15,10 +15,10 @@ namespace $rootnamespace$
 	{
 		public static void Start()
 		{
-			//Register a custom repository by implementing IEditableRepository 
+			//Register a custom repository by implementing IBlogRepository 
 			PluginBlogConfig.RegisterRepository = () => new BlogRepository(new BlogContext());
 
-			//Register the authorization method used to enable/disable editing on the html element
+			//Register the authorization method used to access the blog admin area
 			PluginBlogConfig.RegisterAuthorization = () =>
 			{
 				var authProvider = new SampleAuthProvider();
