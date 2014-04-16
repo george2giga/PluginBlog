@@ -5,6 +5,8 @@ A simple MVC5 blog for existing sites.
 The package adds a *BlogAdmin* area to an existing web project, providing CRUD methods for posts/categories/tags.
 An example of a *BlogController* is also added to show/list posts.
 
+For a demo visit http://pluginblog.apphb.com/.
+
 
 ----------
 > **Download instructions:**
