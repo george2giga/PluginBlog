@@ -14,7 +14,7 @@ For a demo visit http://pluginblog.apphb.com/.
 > - Download the [Nuget][1] package using **PM> Install-Package PluginBlog**  
 > - Create a database according to the PluginBlog connection string in the web.config and use the script.sql file in the App_Data folder to create the tables .
 > - If the hosting site already uses authentication then remove from the web.config the one added by the plugin. For more details check the Setup Guide below.
-> - Login to the admin area: **yoursite/blogadmin/auth/login** (default credentials in the config) and start adding new posts. (see [<i class="icon-share"></i> Synchronization](#synchronization) section).
+> - Login to the admin area: **yoursite/blogadmin/auth/login** (default credentials in the config) and start adding new posts. 
 
 Setup
 ---------
