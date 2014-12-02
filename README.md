@@ -58,6 +58,7 @@ To replace the default authentication, create a new implementation of *IAuthProv
 
 #### <i class="icon-cog"></i> PostStart
 After the start, client dependencies are registered. By default the [TinyMce][2] wysiwyg is used along with [Bootstrap][3] for the layout. 
+The login page is at *BlogAdmin/Auth/Login*.
 
 
   [1]: http://docs.nuget.org/docs/start-here/installing-nuget
